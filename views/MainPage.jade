@@ -1,0 +1,46 @@
+html
+title!=title
+body
+block content
+    h2 Add an employee:
+    form(name="add-employee", method="post", action="/api/employees")
+        div.input
+            span.label First Name: 
+            input(type="text", name="firstName",placeholder='First Name', required)
+        br
+        div.input
+            span.label Last Name: 
+            input(type="text", name="lastName",placeholder='Last Name',required)
+        br
+        div.input
+            span.label Hire Date: 
+            input(type="text", name="hireDate",placeholder='YYYY-MM-DD before today',required)
+        br  
+        div.input
+            span.label Role: 
+            input(type="text",width = 'auto',name="role",placeholder='CEO, VP, MANAGER, OR LACKEY',required)
+        br
+        div.actions
+            input(type="submit", value="Add")
+            
+div
+h2 --------Employee Records--------------
+ table(border=1)
+    tbody
+    tr
+      td Employee ID
+      td First Name
+      td Last Name
+      td Hire Date
+      td Role
+      td Favorite Quote
+      td Favorite Joke
+    each employee, index in data
+        tr
+          td=index
+          td=employee.firstName
+          td=employee.lastName
+          td=employee.hireDate
+          td=employee.role
+          td=employee.favoriteQuote
+          td=employee.favoriteJoke

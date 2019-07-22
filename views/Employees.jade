@@ -1,0 +1,22 @@
+html
+head
+title!=title
+body
+div
+ table(border=1)
+    tbody
+    tr
+      td First Name
+      td Last Name
+      td Hire Date
+      td Role
+      td Favorite Quote
+      td Favorite Joke
+    each employee, index in data
+        tr
+          td=employee.firstName
+          td=employee.lastName
+          td=employee.hireDate
+          td=employee.role
+          td=employee.favoriteQuote
+          td=employee.favoriteJoke
